@@ -1,0 +1,12 @@
+# ML Assignment 2
+# This contains list of python libraries used in this assignment
+
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+joblib
+urllib
+zipfile
+os
