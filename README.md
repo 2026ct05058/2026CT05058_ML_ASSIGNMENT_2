@@ -98,11 +98,10 @@ The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons o
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| **Logistic Regression** | • Behaves as a conservative classifier, making positive predictions only when it is highly confident.
-• Achieves better overall accuracy(0.8985) and precision(0.6544), means that customers predicted as subscribers are likely to respond positively.
-• However, the model fails to identify a large proportion of actual subscribers, resulting in relatively low recall(0.2101).
-• This approach is suitable for organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.
- |
+| **Logistic Regression** | -Behaves as a conservative classifier, making positive predictions only when it is highly confident.
+-Achieves better overall accuracy(0.8985) and precision(0.6544), means that customers predicted as subscribers are likely to respond positively.
+-However, the model fails to identify a large proportion of actual subscribers, resulting in relatively low recall(0.2101).
+-This approach is suitable for organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.|
 | **Decision Tree** |• More proactive in identifying potential subscribers compared to Logistic Regression.
 • Captures a reasonable number of customers who are likely to subscribe, improving recall (0.3330).
 • However, this comes at the cost of lower precision (0.3166), as many non-subscribers are also classified as potential subscribers.
@@ -132,50 +131,6 @@ The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons o
 
 **Conclusion:** Among all evaluated machine learning models, Random Forest offers the best combination of predictive accuracy, recall, precision, and overall reliability, making it the preferred choice for supporting targeted marketing campaigns.
  |
-
-- Behaves as a conservative classifier, making positive predictions mainly when it is highly confident.
-- Achieves the highest accuracy (0.8985) and precision (0.6544). Customers predicted as subscribers are therefore more likely to respond positively.
-- Has relatively low recall (0.2101), meaning it fails to identify a large proportion of actual subscribers.
-- May suit organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.
-
-#### Decision Tree
-
-- Is more proactive in identifying potential subscribers than Logistic Regression.
-- Captures a reasonable number of likely subscribers, with recall of 0.3330.
-- Has lower precision (0.3166), meaning many non-subscribers are also classified as potential subscribers.
-- Campaigns based on this model may involve additional outreach to customers who are unlikely to respond.
-
-#### K-Nearest Neighbours (KNN)
-
-- Delivers balanced and consistent predictive performance across the evaluation metrics.
-- Provides a trade-off between precision (0.5380) and recall (0.2974).
-- Avoids the more extreme behaviours observed in conservative or aggressive classifiers.
-- Serves as a dependable baseline model for customer subscription prediction.
-
-#### Naive Bayes
-
-- Is the most aggressive model among the evaluated classifiers.
-- Achieves the highest recall (0.7328), identifying a large proportion of actual subscribers.
-- Has comparatively low precision (0.2409), meaning many non-subscribers are incorrectly predicted as subscribers.
-- May increase marketing costs because of the larger number of false-positive predictions.
-
-#### Random Forest (Ensemble)
-
-- Demonstrates stable overall performance among the evaluated models.
-- Balances precision (0.5542) and recall (0.2920).
-- Its ensemble structure can reduce the risk of overfitting and improve generalization to unseen data.
-- Achieves the highest F1 Score (0.3825) and MCC (0.3508) among the five models.
-
-#### Overall Model Selection
-
-**Random Forest (Ensemble)** is selected as the overall winner among the five evaluated classifiers.
-
-- It maintains strong precision (approximately 0.55) with recall of approximately 0.29.
-- It provides the highest F1 Score (0.3825) and MCC (0.3508), indicating the strongest overall balance according to these two metrics.
-- It offers a useful balance between identifying subscribers and avoiding false-positive predictions.
-
-**Conclusion:** Among the evaluated machine learning models, Random Forest offers the best overall combination of precision, recall, F1 Score, and MCC for this dataset. It is therefore selected as the preferred model for supporting targeted marketing campaigns.
-
 
 Refer to the pdf for the screenshot of the Bits Virtual Lab
 
