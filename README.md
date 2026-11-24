@@ -1,1 +1,152 @@
 # 2026CT05058_ML_ASSIGNMENT_2
+# Machine Learning Classification Models – UCI Bank Marketing
+
+
+## a. Problem Statement
+
+To develop and compare five machine learning classification models for predicting the target class of a public dataset. The dataset is pre-processed by handling missing values, removing duplicates, encoding categorical features, and scaling numerical features. The following classification algorithms are evaluated:
+
+The following classification algorithms are evaluated:
+
+•	Logistic Regression
+•	Decision Tree
+•	K-Nearest Neighbours (KNN)
+•	Naive Bayes (Gaussian/Multinomial)
+•	Random Forest
+
+Model performance is assessed using Accuracy, AUC Score, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC) to identify the most effective classifier and understand the impact of preprocessing and model selection on prediction performance.
+
+## b. Dataset Description
+
+The **UCI Bank Marketing (`bank-additional-full.csv`)** dataset is selected for the binary classification. This dataset contains features to predict whether a client subscribes to a term deposit.
+This dataset has been selected because of following reasons:
+
+- 41188 instances (> 1000 required)
+- 20 features (> 12 required)
+- Contains both numerical and categorical features.
+- Requires missing-value handling.
+- Exhibits class imbalance, allowing meaningful model comparison
+- Suitable for evaluating multiple binary classification algorithms on a real-world marketing prediction problem
+
+### Dataset information
+
+| Item | Dataset information |
+|---|---|
+| Dataset | UCI Bank Marketing (`bank-additional-full.csv`) |
+| Repository | [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank-additional.zip) |
+| Problem type | Binary classification |
+| Objective | Predict whether a client subscribes to a term deposit |
+| Target variable | `y` |
+| Positive class | Yes (`1`) |
+| Negative class | No (`0`) |
+| Number of instances | 41,188 |
+| Number of features | 20 (19 used after excluding `duration`) |
+| Feature types | Numerical and categorical |
+| Numerical features | age, campaign, pdays, previous, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed |
+| Categorical features | job, marital, education, default, housing, loan, contact, month, day_of_week, poutcome. |
+| Missing values | Represented by `"unknown"` |
+| Duplicate records | Present |
+| Class distribution | Imbalanced: `no` is the majority class and `yes` is the minority class |
+
+
+### Data Preprocessing
+
+The following preprocessing steps are applied:
+
+1. Removed duplicate rows.
+2. Removed the `duration` feature to prevent target leakage.
+3. Treated categorical `"unknown"` values as missing values.
+4. Encoded the target variable: `no = 0` and `yes = 1`.
+5. Split the data into 80% training and 20% testing sets using a fixed random seed and stratification.
+6. Imputed numerical missing values using the median calculated from the training data.
+7. Imputed categorical missing values using the most frequent category from the training data.
+8. Applied one-hot encoding to categorical variables and standardization to numerical variables.
+
+## c. GitHub Repository Link
+https://github.com/2026ct05058/2026CT05058_ML_ASSIGNMENT_2
+
+## d. Models Used
+
+- Logistic Regression
+- Decision Tree
+- K-Nearest Neighbours (KNN)
+- Naive Bayes
+- Random Forest (Ensemble)
+
+### Comparison Table with the evaluation metrics calculated for all the 5 models as below
+
+
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|---|---:|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.8985 | 0.7997 | 0.6544 | 0.2101 | 0.3181 | 0.3319 |
+| Decision Tree | 0.8439 | 0.6228 | 0.3166 | 0.3330 | 0.3246 | 0.2365 |
+| KNN | 0.8921 | 0.7383 | 0.5380 | 0.2974 | 0.3831 | 0.3467 |
+| Naive Bayes | 0.7097 | 0.7756 | 0.2409 | 0.7328 | 0.3626 | 0.2928 |
+| Random Forest (Ensemble) | 0.8938 | 0.7814 | 0.5542 | 0.2920 | **0.3825** | **0.3508** |
+
+### Metrics in visualization form for the five models (Graph Representation)
+2026CT05058_ML_Assignment2
+The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons of the five models using the following metrics:
+- Accuracy
+- AUC
+- Precision
+- Recall
+- F1 Score
+- Matthews Correlation Coefficient (MCC)
+
+### Observations on the performance of each model on the chosen dataset (UCI Bank Marketing)
+#### Logistic Regression
+
+- Behaves as a conservative classifier, making positive predictions mainly when it is highly confident.
+- Achieves the highest accuracy (0.8985) and precision (0.6544). Customers predicted as subscribers are therefore more likely to respond positively.
+- Has relatively low recall (0.2101), meaning it fails to identify a large proportion of actual subscribers.
+- May suit organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.
+
+#### Decision Tree
+
+- Is more proactive in identifying potential subscribers than Logistic Regression.
+- Captures a reasonable number of likely subscribers, with recall of 0.3330.
+- Has lower precision (0.3166), meaning many non-subscribers are also classified as potential subscribers.
+- Campaigns based on this model may involve additional outreach to customers who are unlikely to respond.
+
+#### K-Nearest Neighbours (KNN)
+
+- Delivers balanced and consistent predictive performance across the evaluation metrics.
+- Provides a trade-off between precision (0.5380) and recall (0.2974).
+- Avoids the more extreme behaviours observed in conservative or aggressive classifiers.
+- Serves as a dependable baseline model for customer subscription prediction.
+
+#### Naive Bayes
+
+- Is the most aggressive model among the evaluated classifiers.
+- Achieves the highest recall (0.7328), identifying a large proportion of actual subscribers.
+- Has comparatively low precision (0.2409), meaning many non-subscribers are incorrectly predicted as subscribers.
+- May increase marketing costs because of the larger number of false-positive predictions.
+
+#### Random Forest (Ensemble)
+
+- Demonstrates stable overall performance among the evaluated models.
+- Balances precision (0.5542) and recall (0.2920).
+- Its ensemble structure can reduce the risk of overfitting and improve generalization to unseen data.
+- Achieves the highest F1 Score (0.3825) and MCC (0.3508) among the five models.
+
+#### Overall Model Selection
+
+**Random Forest (Ensemble)** is selected as the overall winner among the five evaluated classifiers.
+
+- It maintains strong precision (approximately 0.55) with recall of approximately 0.29.
+- It provides the highest F1 Score (0.3825) and MCC (0.3508), indicating the strongest overall balance according to these two metrics.
+- It offers a useful balance between identifying subscribers and avoiding false-positive predictions.
+
+**Conclusion:** Among the evaluated machine learning models, Random Forest offers the best overall combination of precision, recall, F1 Score, and MCC for this dataset. It is therefore selected as the preferred model for supporting targeted marketing campaigns.
+
+
+Refer to the pdf for the screenshot of the Bits Virtual Lab
+
+
+
+
+
+
+
+
