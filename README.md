@@ -85,7 +85,6 @@ https://github.com/2026ct05058/2026CT05058_ML_ASSIGNMENT_2
 | Random Forest (Ensemble) | 0.8938 | 0.7814 | 0.5542 | 0.2920 | **0.3825** | **0.3508** |
 
 ### Metrics in visualization form for the five models (Graph Representation)
-2026CT05058_ML_Assignment2
 The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons of the five models using the following metrics:
 - Accuracy
 - AUC
