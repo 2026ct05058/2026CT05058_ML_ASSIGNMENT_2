@@ -98,9 +98,7 @@ The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons o
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| **Logistic Regression** | -Behaves as a conservative classifier, making positive predictions only when it is highly confident.
--Achieves better overall accuracy(0.8985) and precision(0.6544), means that customers predicted as subscribers are likely to respond positively.
--However, the model fails to identify a large proportion of actual subscribers, resulting in relatively low recall(0.2101).
+| **Logistic Regression** | -Behaves as a conservative classifier, making positive predictions only when it is highly confident.-Achieves better overall accuracy(0.8985) and precision(0.6544), means that customers predicted as subscribers are likely to respond positively.-However, the model fails to identify a large proportion of actual subscribers, resulting in relatively low recall(0.2101).
 -This approach is suitable for organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.|
 | **Decision Tree** |• More proactive in identifying potential subscribers compared to Logistic Regression.
 • Captures a reasonable number of customers who are likely to subscribe, improving recall (0.3330).
