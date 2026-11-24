@@ -95,7 +95,43 @@ The notebook (2026CT05058_ML_Assignment2.ipynb) includes graphical comparisons o
 - Matthews Correlation Coefficient (MCC)
 
 ### Observations on the performance of each model on the chosen dataset (UCI Bank Marketing)
-#### Logistic Regression
+
+| ML Model Name | Observation about model performance |
+|---|---|
+| **Logistic Regression** | • Behaves as a conservative classifier, making positive predictions only when it is highly confident.
+• Achieves better overall accuracy(0.8985) and precision(0.6544), means that customers predicted as subscribers are likely to respond positively.
+• However, the model fails to identify a large proportion of actual subscribers, resulting in relatively low recall(0.2101).
+• This approach is suitable for organizations with limited marketing resources that prioritize minimizing unnecessary customer contacts.
+ |
+| **Decision Tree** |• More proactive in identifying potential subscribers compared to Logistic Regression.
+• Captures a reasonable number of customers who are likely to subscribe, improving recall (0.3330).
+• However, this comes at the cost of lower precision (0.3166), as many non-subscribers are also classified as potential subscribers.
+• Marketing campaigns based on this model may involve additional outreach efforts toward customers who are unlikely to respond.
+ |
+| **kNN** | • Delivers balanced and consistent predictive performance across evaluation metrics.
+• Although it does not achieve the highest score in any single metric, it provides a reliable trade-off between precision (0.5380) and recall (0.2974).
+• The model avoids the extreme behaviours observed in more conservative or aggressive classifiers.
+• This makes KNN a dependable baseline model for customer subscription prediction.
+ |
+| **Naive Bayes** | • The most aggressive model among the evaluated classifiers.
+• Successfully identifies the majority of actual subscribers, achieving the highest recall (0.7328).
+• However, its precision 0.2409 is comparatively low, means that many non-subscribers are incorrectly predicted as subscribers.
+• While the model maximizes customer coverage, it may significantly increase marketing costs due to a higher number of false-positive predictions.
+ |
+| **Random Forest (Ensemble)** | •Demonstrates the most stable and reliable overall performance among all models.
+• Effectively balances precision (0.5542) and recall (0.2920), ensuring that subscriber predictions remain both accurate and comprehensive.
+• The ensemble structure reduces the risk of overfitting and improves generalization to unseen data.
+• As a result, it offers strong predictive capability while maintaining consistent performance across multiple evaluation criteria.
+ |
+| **Overall, Winner for your dataset?** |**Random Forest (Ensemble)** is the winner model among the compared five classifiers.
+
+• It maintains a strong Precision (~0.55) while maintaining a stable Recall (~0.29
+• It does not suffer from the extreme 80% failure rates of Logistic Regression (on recall) or Naive Bayes (on precision).
+• Because of this balance, it achieves the highest overall F1-Score and MCC (Matthews Correlation Coefficient), which mathematically measure the quality of this trade-off
+• When we rank the models mathematically across all 6 metrics (Accuracy, AUC, Precision, Recall, F1, and MCC) and average those ranks, Random Forest consistently places near the top on average, making it the most robust, balanced model.
+
+**Conclusion:** Among all evaluated machine learning models, Random Forest offers the best combination of predictive accuracy, recall, precision, and overall reliability, making it the preferred choice for supporting targeted marketing campaigns.
+ |
 
 - Behaves as a conservative classifier, making positive predictions mainly when it is highly confident.
 - Achieves the highest accuracy (0.8985) and precision (0.6544). Customers predicted as subscribers are therefore more likely to respond positively.
